@@ -1,4 +1,11 @@
-html, body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flowers</title>
+
+<style>
+	html, body {
 	background: #0d0a14;
     overflow: hidden;
     padding: 0;
@@ -51,7 +58,11 @@ canvas {
     .name {
         font-size: 45px
     }
-}<div class="container"> 
+}
+	</style>
+	</head>
+<body>
+	<div class="container"> 
     <canvas id="canvas"></canvas>
     <div class="clean-btn">
         clean the screen
@@ -221,6 +232,7 @@ stem_color += vec3(0.0, 0.12 * u_stop_randomizer[1], 0.04);
         gl_Position = vec4(position, 1.);
     }
 </script>
+<script type="module">
 import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module";
 
 const canvasEl = document.querySelector("#canvas");
@@ -343,3 +355,4 @@ function updateSize() {
     shaderMaterial.uniforms.u_ratio.value = window.innerWidth / window.innerHeight;
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+</script>
